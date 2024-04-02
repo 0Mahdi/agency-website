@@ -36,6 +36,8 @@
   );
   --testimonial-bg: #1a0f4f;
   --font-name: "Roboto", sans-serif;
+  --small-text-color: rgba(255, 255, 255, 0.774);
+  --icon-bg:#151e4f;
 }
 
 .light-theme {
@@ -51,6 +53,10 @@
     rgba(193, 243, 255, 1) 50%,
     rgba(226, 250, 255, 1) 78%
   );
+  --small-text-color:#000;
+  --card-bg:#fff;
+  --testimonial-bg: #f7f7f7;
+  --team-card-bg: #fff;
 }
 
 *{
@@ -74,8 +80,18 @@ h2{
     color: var(--heading-color);
 }
 
+section{
+  padding: 60px 0px;
+}
+
 .container {
   width: 1140px;
   padding: 0px 15px;
   margin: auto;
+}
+
+.description{
+  color: var(--small-text-color);
+  line-height: 30px;
+  font-size: .9rem;
 }
