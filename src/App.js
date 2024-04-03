@@ -1,12 +1,14 @@
 import './App.css';
 import Header from './components/Header/Header';
+import Counter from './components/UI/Counter';
 import Hero from './components/UI/Hero';
 
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <Hero />
+      <Counter />
     </>
   )
 }
