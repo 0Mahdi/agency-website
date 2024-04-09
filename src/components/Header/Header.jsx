@@ -25,7 +25,7 @@ const nav__links =[
     },
 ]
 
-const Header = () => {
+const Header = ({theme, toggleTheme}) => {
   return (
     <header className='header'>
         <div className='container'>
@@ -37,21 +37,29 @@ const Header = () => {
                 {/* =========== Navigation ============*/}
                 <div className='navigation'>
                     <ul className='menu'>
-                        {
-                            nav__links.map((item,index)=>(
-                                <li className='menu__item'>
-                                    <a href={item.path} className='menu__link'>
-                                        {item.display}
-                                    </a>
-                                </li>
-                            ))
-                        }
+                        {nav__links.map((item,index)=>(
+                            <li className='menu__item' key={index}>
+                                <a href={item.path} className='menu__link'>
+                                    {item.display}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 {/* ========== Light Mode */}
                 <div className='light__mode'>
-                    <span><i class='ri-sun-line'></i>Light Mode</span>
+                    <span onClick={toggleTheme}>
+                        {theme === 'light-theme' ? (
+                            <span>
+                                <i className='ri-moon-line'></i>Dark
+                            </span> 
+                        ) : (
+                            <span>
+                                <i className='ri-sun-line'></i>Light
+                            </span>
+                        )}
+                    </span>
                 </div>
             </div>
         </div>
@@ -59,4 +67,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

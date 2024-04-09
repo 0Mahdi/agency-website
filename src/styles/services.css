@@ -32,6 +32,15 @@
     border: 1px solid var(--primary-color);
 }
 
+.light-theme .service__icon {
+    color: #fff;
+}
+
+.light-theme .service__icon i{
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
 .service__icon i {
     font-size: 2rem;
     color: var(--primary-color);
