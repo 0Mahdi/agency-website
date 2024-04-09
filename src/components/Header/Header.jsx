@@ -29,6 +29,8 @@ const Header = ({theme, toggleTheme}) => {
 
     const headerRef = useRef(null)
 
+    const menuRef = useRef(null)
+
     const headerFunc = () => {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             headerRef.current.classList.add('header__shrink')
@@ -67,6 +69,8 @@ const Header = ({theme, toggleTheme}) => {
             console.error("Invalid target attribute or missing '#' in href.");
         }
     };
+
+    const toggleMenu = () => menuRef.current.classList.toggle('menu__active');
     
 
   return (
@@ -78,7 +82,7 @@ const Header = ({theme, toggleTheme}) => {
                 </div>
 
                 {/* =========== Navigation ============*/}
-                <div className='navigation'>
+                <div className='navigation' ref={menuRef} onClick={toggleMenu}>
                     <ul className='menu'>
                         {nav__links.map((item,index)=>(
                             <li className='menu__item' key={index}>
@@ -104,6 +108,10 @@ const Header = ({theme, toggleTheme}) => {
                         )}
                     </span>
                 </div>
+
+                <span className="mobile__menu" onClick={toggleMenu}>
+                    <i class="ri-menu-line" />
+                </span>
             </div>
         </div>
     </header>
